@@ -5,4 +5,4 @@ Below are some quick PowerShell scripts to debug and verify an AAD application i
 
 [Commercial Azure Example](/AAD/SampleAadToken_AzureCommercial.ps1)
 
-[Azure for Government Example](/AAD/SampleAadToken_AzureGovernment.ps1)
+[Azure for Government Example](/AAD/SampleAadToken_AzureForGovernment.ps1)
