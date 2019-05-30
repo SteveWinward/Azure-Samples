@@ -1,6 +1,6 @@
 ﻿# Created by Steve Winward
 # 
-# This script is a sample to show how you can work with the Azure for Governemnt
+# This script is a sample to show how you can work with the commercial Azure
 # Graph API endpoint
 #
 # This requries you to create an AAD Application ahead of time.  You will also need
