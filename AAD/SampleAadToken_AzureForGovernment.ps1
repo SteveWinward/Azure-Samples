@@ -35,8 +35,18 @@ Write-Output "JWT Token =>"
 $oauth.access_token
 Write-Output ""
 
+# Get the middle part of the JWT token
+$middleToken = $oauth.access_token.Split(".")[1]
+
+# padd the base64 with "=" if the length is not divisible by 4
+$remainder = 4 - ($middleToken.Length % 4)
+
+for($i=0; $i -lt $remainder; $i++){
+    $middleToken = "" + $middleToken + "="
+}
+
 # Parses the JWT token for the role assignments to the AAD Application
-$payload = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($oauth.access_token.Split(".")[1]))
+$payload = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($middleToken))
 Write-Output "Token Roles =>"
 ($payload | ConvertFrom-Json).roles
 Write-Output ""
